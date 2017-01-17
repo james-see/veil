@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href='assets/css/font.css'>
+	<link rel="stylesheet" type="text/css" href='veilstyle.css'>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+$('.welcometoveil').delay(0).fadeIn(400)
+$(document).keydown(function(e) {
+    if(e.which == 13) {
+	    $("#meat").css('display','block');
+        //alert('You pressed enter!');
+        console.log('you pressed enter!');
+        $("#output1").text('you pressed enter!');
+        var $newdiv1 = $( "<span id='output2'>hello</div><span>" );
+        $( "body" ).append( $newdiv1 );
+  //alert( "Handler for .keyup() called." );
+}
+});
+
+       $(document).keyup(function(e) {
+	       if(e.which == 13) {
+	        $("#meat").css('display','none');
+	        console.log('you stopped pressing enter enter!');
+	        $("#output1").text('you stopped pressing enter!').delay(1000).fadeOut(400);
+
+	        }
+	        	        setInterval(generate, 1000);
+	        });
+	        
+$(window).keydown(function(event) {
+    if(event.ctrlKey && event.keyCode == 78) { 
+        $('body').html("Hey! Ctrl+N event captured!");
+            event.preventDefault(); 
+        }
+    });
+
+</script>
+	</head>
+	<body>
+		<div>
+		<div id="output1">
+		</div>
+					<span id="number"></span>
+		<div class='welcometoveil'>
+		<h1>Hello visitor. This site will only display content while you are pressing the enter key, otherwise it disappears</h1>
+		</div>
+		<div id="meat">
+			<p>super secret content that your bots will never collect.</p>
+			<p>you think you might be able to? go ahead and try it.</p>
+		</div>
+		<div id="overlay">
+		</div>
+		</div>
+	<script>
+		$(document).click(function() {
+  $(".welcometoveil").fadeTo( "slow", 0 );
+});
+$('.welcometoveil').delay(Math.floor(Math.random() * 6)+1).fadeOut(800);
+</script>
+
+<script language="javascript">
+  function generate() {
+    $('#number').text(Math.floor(Math.random() * 6) + 1);
+  }
+  setInterval(generate, 1000);
+</script>
+	</body>
+</html>
