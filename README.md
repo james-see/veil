@@ -1,2 +1,0 @@
-# veil
-the uncollectible website
