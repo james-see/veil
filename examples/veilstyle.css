@@ -57,12 +57,21 @@ body {
 }
 
 #number {
+	font-family: monospace;
+	font-size: 4rem;
 	display:block;
 	color: yellow;
 }
 
 #output2 {
 	color: yellow;
-	position: absolute;
-	display: list-item;
+	position: relative;
+	display: block;
+	clear: both;
+}
+
+#lister {
+	font-family: monospace;
+	padding: 10px;
+	border: 3px solid blue;
 }
