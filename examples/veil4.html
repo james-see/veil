@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/csshake/dist/csshake.min.css">
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href='assets/css/font.css'>
+	<link rel="stylesheet" type="text/css" href='veilstyle.css'>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+$('.welcometoveil').delay(10).fadeIn(1000)
+$(document).keydown(function(e) {
+    if(e.which == 13) {
+	    $("#meat").css('display','block');
+        //alert('You pressed enter!');
+        console.log('you pressed enter!');
+        $("#output1").text('you pressed enter!');
+        var $newdiv1 = $( "<br /><li><span id='output2'>hello<li>" );
+        $( "#lister" ).append( $newdiv1 );
+  //alert( "Handler for .keyup() called." );
+}
+});
+
+       $(document).keyup(function(e) {
+	       if(e.which == 13) {
+	        $("#meat").css('display','none');
+	        console.log('you stopped pressing enter enter!');
+	        $("#output1").text('you stopped pressing enter!').delay(1000).fadeOut(40);
+
+	        }
+	        	        setInterval(generate, 1000);
+	        });
+	        
+$(window).keydown(function(event) {
+    if(event.ctrlKey && event.keyCode == 78) { 
+        $('body').html("Hey! Ctrl+N event captured!");
+   
+            event.preventDefault(); 
+        }
+    });
+
+</script>
+	</head>
+	<body>
+		<div>
+		<div id="output1">
+		</div>
+					<span id="number"></span>
+		<div class='welcometoveil'>
+		<h1>Hello visitor. This site will only display content while you are pressing the enter key, otherwise it disappears</h1>
+		</div>
+		<div id="meat">
+			<p class="shake-opacity shake-constant shake-constant--hover">super secret content that your bots will never collect.</p>
+			<p class="shake-opacity shake-constant shake-constant--hover">you think you might be able to? go ahead and try it.</p>
+			<p class="shake-opacity shake-constant shake-constant--hover">welcome to jamescampbell.us</p>
+			<p class="shake-opacity shake-constant shake-constant--hover">james really doesn't want you to crawl his site</p>
+		</div>
+		<div id="overlay">
+		</div>
+		</div>
+	<script>
+		$(document).click(function() {
+  $(".welcometoveil").fadeTo( "slow", 0 );
+});
+$('.welcometoveil').delay(Math.floor(Math.random() * 100)+1).fadeOut(3000);
+</script>
+
+<script language="javascript">
+  function generate() {
+  	var newnum = Math.floor(Math.random() * 5000) + 1;
+    $('#number').text(newnum);
+    $('#number').fadeIn(400); // pulse it from fadeout below
+         var widther = Math.floor(Math.random() * 60) + 1;
+        var lefter = Math.floor(Math.random() * 65) + 1;
+        $('#number').css({top: widther, left: lefter, position:'relative'}).fadeOut(400);
+        $('#meat').append('<p class="shake-opacity shake-constant shake-constant--hover">'+newnum+'</p>');
+  }
+  setInterval(generate, 2500);
+</script>
+<ul id='lister'></ul>
+	</body>
+</html>

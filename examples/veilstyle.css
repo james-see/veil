@@ -44,6 +44,7 @@
 -ms-user-select: none;  
 -o-user-select: none;  
 user-select: none;
+max-width: 500px;
 }
 
 body {
@@ -61,6 +62,8 @@ body {
 	font-size: 4rem;
 	display:block;
 	color: yellow;
+	border: 2px solid blue;
+	width: 50px;
 }
 
 #output2 {
