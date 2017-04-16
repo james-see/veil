@@ -3,6 +3,8 @@ veil
 
 *the uncollectible website*
 
+``example using veil6.html after pressing period(.) key to show content and then releasing key``
+
 .. image:: https://cloud.githubusercontent.com/assets/616585/25074501/0ac19fa0-22ca-11e7-995a-279b6f3ae458.gif
    :width: 40pt
 
