@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<noscript>
+    		<?php if(basename($_SERVER['REQUEST_URI']) != "disable.php"){ ?>
+        	<meta http-equiv="Refresh" content="0;disable.php">
+    		<?php } ?>
+	</noscript>
+	<?php
+	$happymann = $_SERVER['HTTP_USER_AGENT'];
+	if(preg_match("/curl|libcurl|wget|Wget/", $happymann)){
+        	header("location:disable.php");
+		die();
+	}
+	?>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/csshake/dist/csshake.min.css">
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href='assets/css/font.css'>
+	<link rel="stylesheet" type="text/css" href='veilstyle.css'>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+$('.welcometoveil').delay(10).fadeIn(1000)
+	        
+$(window).keydown(function(event) {
+    if(event.ctrlKey && event.keyCode == 78) { 
+        $('body').html("Hey! Ctrl+N event captured!");
+   
+            event.preventDefault(); 
+        }
+    });
+
+</script>
+	</head>
+	<body>
+		<div>
+		<div id="output1">
+		</div>
+					<span id="number"></span>
+		<div class='welcometoveil'>
+		</div>
+		<div id="meat">
+		</div>
+		<div id="overlay">
+		</div>
+		</div>
+	<script>
+		$(document).click(function() {
+  $(".welcometoveil").fadeTo( "slow", 0 );
+});
+$('.welcometoveil').delay(Math.floor(Math.random() * 100)+1).fadeOut(5000);
+</script>
+
+<script language="javascript">
+  function generate() {
+  	var newnum = Math.floor(Math.random() * 5000) + 1;
+    $('#number').text(newnum);
+    $('#number').fadeIn(400); // pulse it from fadeout below
+         var widther = Math.floor(Math.random() * 60) + 1;
+        var lefter = Math.floor(Math.random() * 65) + 1;
+        $('#number').css({top: widther, left: lefter, position:'relative'}).fadeOut(400);
+        $('#meat').append('<p class="shake-opacity shake-constant shake-constant--hover">'+newnum+'</p>');
+  }
+  setInterval(generate, 2500);
+</script>
+<ul id='lister'></ul>
+<script type='text/javascript' src="assets/js/text_functions.js"></script>
+	</body>
+</html>
