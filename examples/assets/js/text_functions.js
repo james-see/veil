@@ -1,4 +1,6 @@
+// keys that are accepted keyboard hotkeys
 var items = [13,32,190,187,48];
+// select one in a pseudo-random way
 var item = items[Math.floor(Math.random()*items.length)];
 $(document).ready(function() {
 	if (item == 13) {
@@ -21,15 +23,17 @@ $(document).ready(function() {
 $(function() {
 // when you press the required key, display stuff and start appending
 $(document).keydown(function(e) {
+    var wordstuff = ['always be filling up junk', 'yes, I am a jerk', 'dont mind me, just wasting kilobytes', 'your mother was a snowblower', 'its not a tumour', 'not a browser, bowser', 'lol', '4 the lolz', 'love your mom', 'whos your daddy and what does he do?']
     if(e.which == item) {
     	$("#meat").css('display','block');
     	$("#lister").css('display','block');
     	console.log('you pressed enter!');
         $("#output1").text('you pressed enter!');
-		//var entry = worder[Math.floor(Math.random()*count)];
-		var entry = 'hello';
+		var entry = wordstuff[Math.floor(Math.random()*wordstuff.length)];
+		//var entry = 'hello';
         var $newdiv1 = $( "<br /><li><span id='output2'>"+entry+"</li>" );
         $( "#lister" ).append( $newdiv1 );
+        // add the meat!
     	loadtext();
   //alert( "Handler for .keyup() called." );
 }
@@ -39,8 +43,8 @@ $(document).keyup(function(e) {
 	       if(e.which == item) {
 	        $("#meat").css('display','none');
 	        $("#lister").css('display','none');
-	        console.log('you stopped pressing enter enter!');
-	        $("#output1").text('you stopped pressing enter!').delay(1000).fadeOut(40);
+	        // console.log('you stopped pressing hot key!');
+	        $("#output1").text('you stopped pressing hot key!').delay(1000).fadeOut(40);
 
 	        }
 	        	        setInterval(generate, 1000);
@@ -66,7 +70,7 @@ function loadtext() {
 			else {alert("fail");}
 		},
       	error: function(xhr){
-        	alert("AJAX Error with adding group");
+        	alert("AJAX Error with adding group, check to make sure php running properly");
       	}	
 
 	});
